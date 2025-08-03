@@ -1,0 +1,107 @@
+{
+  "summary": {
+    "total_tests": 11,
+    "passed": 11,
+    "failed": 0,
+    "warnings": 0,
+    "success_rate": 100.0,
+    "total_time": 0.7072896957397461
+  },
+  "detailed_results": [
+    {
+      "test": "系統診斷",
+      "status": "PASS",
+      "details": {
+        "spacy_model": true,
+        "gemini_api": true,
+        "external_api": true
+      }
+    },
+    {
+      "test": "模型載入",
+      "status": "PASS",
+      "details": {
+        "model_name": "en_core_web_sm",
+        "entities_found": 1
+      }
+    },
+    {
+      "test": "NER功能-基本實體識別",
+      "status": "PASS",
+      "details": {
+        "entities_found": 4,
+        "expected_found": 4,
+        "service_used": "local_spacy"
+      }
+    },
+    {
+      "test": "NER功能-半導體產業",
+      "status": "PASS",
+      "details": {
+        "entities_found": 5,
+        "expected_found": 4,
+        "service_used": "local_spacy"
+      }
+    },
+    {
+      "test": "NER功能-日期和數字",
+      "status": "PASS",
+      "details": {
+        "entities_found": 3,
+        "expected_found": 1,
+        "service_used": "local_spacy"
+      }
+    },
+    {
+      "test": "NER功能-複雜科技文本",
+      "status": "PASS",
+      "details": {
+        "entities_found": 5,
+        "expected_found": 4,
+        "service_used": "local_spacy"
+      }
+    },
+    {
+      "test": "NER功能-地理和組織",
+      "status": "PASS",
+      "details": {
+        "entities_found": 6,
+        "expected_found": 6,
+        "service_used": "local_spacy"
+      }
+    },
+    {
+      "test": "API連接",
+      "status": "PASS",
+      "details": {
+        "chunks_returned": 2
+      }
+    },
+    {
+      "test": "回退機制",
+      "status": "PASS",
+      "details": {
+        "local_service": "local_spacy",
+        "external_service": "error"
+      }
+    },
+    {
+      "test": "Gemini分析",
+      "status": "PASS",
+      "details": {
+        "entities_analyzed": 3,
+        "analysis_length": 260
+      }
+    },
+    {
+      "test": "性能測試",
+      "status": "PASS",
+      "details": {
+        "text_length": 2364,
+        "processing_time": 0.08192992210388184,
+        "entities_found": 60,
+        "chars_per_second": 28853.92710373386
+      }
+    }
+  ]
+}
