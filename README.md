@@ -1,70 +1,65 @@
 # BM25 NER Rating System
 
-## Overview
-A comprehensive content quality evaluation system for RAG (Retrieval-Augmented Generation) applications that provides dual-layer scoring: NER entity analysis and LLM semantic relevance assessment.
+A dual-layer scoring system for RAG content quality evaluation
 
-## Features
-- **BM25 Retrieval Integration**: Keyword-based document filtering with external service at 192.168.1.143:8000
-- **NER Entity Scoring**: spaCy-powered entity extraction with quality metrics
-- **LLM Semantic Analysis**: Gemini-1.5-flash powered precision scoring (0.000-1.000)
-- **Microservice Architecture**: FastAPI-based modular design
-- **Dual Scoring Mechanism**: Combined NER (0.0-1.0) + LLM (0.000-1.000) evaluation
+## Description
+
+This system provides comprehensive content quality assessment for Retrieval-Augmented Generation (RAG) applications through dual evaluation mechanisms. It combines Named Entity Recognition (NER) analysis with LLM-powered semantic relevance scoring to deliver precise content quality metrics for improved RAG performance.
+
+## Key Features
+
+**BM25 Retrieval** - Keyword-based document filtering  
+**NER Entity Analysis** - spaCy-powered entity extraction and scoring  
+**LLM Semantic Evaluation** - Gemini-1.5-flash precision semantic relevance analysis  
+**High Performance** - 28K+ characters/second processing speed  
 
 ## Tech Stack
-- **NLP**: spaCy Transformer models (en_core_web_trf, en_core_web_sm)
-- **LLM**: Google Generative AI (Gemini-1.5-flash)
-- **Retrieval**: BM25 + Elasticsearch
-- **Framework**: FastAPI microservices
-- **Language**: Python 3.12.4
 
-## Performance Metrics
-- 95%+ relevance assessment accuracy
-- 28,854+ characters/second processing speed
-- Dual scoring mechanism for comprehensive quality evaluation
-- Intelligent fallback between Transformer and statistical models
+- **Python 3.12** + FastAPI microservices
+- **spaCy** (Transformer + statistical models)
+- **Google Generative AI**
+- **BM25 + Elasticsearch**
 
-## Installation
+## Quick Start
 
-### Prerequisites
+### Requirements
 - Python 3.12+
 - Google Generative AI API key
-- BM25 retrieval service access
 
-### Setup
+### Installation
 ```bash
-# Install dependencies
-pip install spacy google-generativeai fastapi uvicorn
+# Install packages
+pip install -r requirements.txt
 
 # Download spaCy models
 python -m spacy download en_core_web_sm
 python -m spacy download en_core_web_trf
-```
 
-## Configuration
-Update `config.py` with your API keys and endpoints.
+# Configure API key
+# Edit config.py with your API credentials
+```
 
 ## Usage
 
-### Basic NER Analysis
 ```bash
+# Basic NER analysis
 python ner.py
-```
 
-### Comprehensive Testing
-```bash
 # Full test suite
 python ner_test_suite.py
 
-# Quick integration test
+# Integration test
 python test_integrated_ner.py
 ```
 
 ## File Structure
-- `ner.py` (27.9KB): Core NER analysis system
-- `config.py` (4.3KB): System configuration
-- `score.py` (7.3KB): LLM scoring mechanisms
-- `ner_test_suite.py` (17.8KB): Testing framework
-- `test_integrated_ner.py` (4.4KB): Integration tests
+
+| File | Description |
+|------|-------------|
+| `ner.py` | Core NER analysis system |
+| `score.py` | LLM scoring mechanism |
+| `config.py` | System configuration |
+| `ner_test_suite.py` | Testing framework |
 
 ## License
 MIT License
